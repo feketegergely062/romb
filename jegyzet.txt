@@ -1,0 +1,5 @@
+npm init -y  ----------> package.json létrehozása
+npm install bootstrap
+npm install --save-dev lite-server -- 3 madik megadás (http szerver telepítése)
+
+javascript/regex szit.hu

@@ -20,10 +20,14 @@ window.addEventListener('load', () => {
 });
 
 function init(){
-    doc.calcButton.addEventListener('click',() => {
+    if(doc.calcButton){
+     doc.calcButton.addEventListener('click',() => {
         startCalc()
     })
+}
 };
+
+
 
 function startCalc(){
     console.log("műkodik")
@@ -33,11 +37,24 @@ function startCalc(){
     doc.area.value = state.area
 }
 
+function checkInput(input){
+    let minta = /^[0-9]+$/;
+    let inputStr = String(input)
+    if(inputStr.match(minta)){
+        return true
+    }else{
+        return false
+    }
+}
+
 function calcPerimeter(aside){
-    return 0;
+    return aside *4;
 
 }
 
 function calcArea(aside,alpha){
-    return 0;
+    let rad = alpha * Math.PI / 180;
+    let area = Math.pow(aside,2) * Math.sin(rad);
+    return area;
+
 }
